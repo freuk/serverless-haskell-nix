@@ -12,7 +12,7 @@ Here are two ways to leverage Nix for reproducible serverless haskell by bundlin
 - Using a container. Build output 43MB, quota 10GB. Late 2020 [feature announcement](https://aws.amazon.com/blogs/aws/new-for-aws-lambda-container-image-support/).
   ```
   docker load <$(nix-build -A container)
-  # push "lambda:nix" to AWS ECR with method of your choice and trigger AWS Lambda update
+  # push "lambda:nix" to AWS ECR with method of your choice and trigger an AWS Lambda update
   ```
 
 Both examples package the same function, which uses Oleg Grenrus'

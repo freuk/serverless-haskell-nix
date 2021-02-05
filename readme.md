@@ -16,9 +16,9 @@ Here are two ways to leverage Nix for AWS Lambda compatible reproducible haskell
   # trigger an AWS Lambda update with the method of your choice
   ```
 
-Both examples package the same function, which uses Oleg Grenrus'
+Both examples package `Main.hs`, which uses Oleg Grenrus'
 [AWS Runtime](https://github.com/phadej/aws-lambda-haskell-runtime)
-implementation, and indeed file `Main.hs` simply contains an example of his.
+implementation.
 
 The implementation for the patching in `lambda-zip` is adapted from Renzo Carbonara's
 [code](https://github.com/k0001/aws-lambda-nix-haskell).

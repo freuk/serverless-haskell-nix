@@ -9,7 +9,7 @@ Here are two ways to leverage Nix for AWS Lambda compatible reproducible haskell
   # push "lambda.zip" to AWS Lambda with method of your choice
   ```
 
-- Using a container. Build output 43MB, quota 10GB. Late 2020 [feature announcement](https://aws.amazon.com/blogs/aws/new-for-aws-lambda-container-image-support/).
+- Using a container (see late 2020 [feature announcement](https://aws.amazon.com/blogs/aws/new-for-aws-lambda-container-image-support/)). Build output 43MB, quota 10GB.
   ```
   docker load <$(nix-build -A container)
   # push "lambda:nix" to AWS ECR with method of your choice and trigger an AWS Lambda update

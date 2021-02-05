@@ -22,4 +22,4 @@ Both examples package the `toUpper` example function contained in `Main.hs`, whi
 The implementation for the patching in `lambda-zip` is adapted from Renzo Carbonara's
 [code](https://github.com/k0001/aws-lambda-nix-haskell).
 
-[See this page for AWS Quotas](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html)
+[See this page for AWS Lambda Quotas](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html)

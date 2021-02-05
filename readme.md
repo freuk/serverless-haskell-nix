@@ -8,7 +8,7 @@ Here are two ways to ship haskell to AWS Lambda. The first method only adds shar
   # push file "./lambda.zip" to AWS Lambda with the method of your choice
   ```
 
-- Using a container (see late 2020 [feature announcement](https://aws.amazon.com/blogs/aws/new-for-aws-lambda-container-image-support/)). Build output 43MB, quota 10GB. Bundles all the dependencies.
+- Using a container (see late 2020 [feature announcement](https://aws.amazon.com/blogs/aws/new-for-aws-lambda-container-image-support/)). Build output 43MB, quota 10GB. Bundles all Nix dependencies.
   ```
   $ docker load <$(nix-build -A container)
   # push image "lambda:nix" to AWS ECR with Docker

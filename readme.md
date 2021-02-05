@@ -20,7 +20,7 @@ Both examples package the same function, which uses Oleg Grenrus'
 [AWS Runtime](https://github.com/phadej/aws-lambda-haskell-runtime)
 implementation, and indeed file `Main.hs` simply contains an example of his.
 
-The implementation for the dependency bundling is adapted from Renzo Carbonara's
+The implementation for the patching in `lambda-zip` is adapted from Renzo Carbonara's
 [code](https://github.com/k0001/aws-lambda-nix-haskell).
 
 Note that functions `lambda-zip` and `lambda-container` are not specific to

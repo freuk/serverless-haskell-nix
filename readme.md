@@ -1,6 +1,6 @@
 ## Serverless Haskell via Nix
 
-Here are two ways to leverage Nix for reproducible serverless haskell by bundling dependencies all the way down to glibc.
+Here are two ways to leverage Nix for AWS Lambda compatible reproducible haskell builds. Both work by bundling dependencies all the way down to glibc.
 
 - Using a custom runtime. Build output 3MB, quota 50MB. Loads dependencies via
   `LD_LIBRARY_PATH` overwrite.

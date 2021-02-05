@@ -21,3 +21,5 @@ implementation.
 
 The implementation for the patching in `lambda-zip` is adapted from Renzo Carbonara's
 [code](https://github.com/k0001/aws-lambda-nix-haskell).
+
+AWS Quotas are available [here](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html).

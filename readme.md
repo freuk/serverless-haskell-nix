@@ -1,15 +1,14 @@
 ## Serverless Haskell via Nix
 
-Here are two ways to leverage Nix for AWS Lambda compatible reproducible haskell builds. Both work by bundling dependencies all the way down to glibc.
+Here are two ways to leverage Nix for AWS Lambda compatible reproducible haskell builds. The first method only adds shared libraries, which is appropriate due to the quota. The second methods bundles the whole set of Nix dependencies.  
 
-- Using a custom runtime. Build output 3MB, quota 50MB. Loads dependencies via
-  `LD_LIBRARY_PATH` overwrite.
+- Using a custom runtime. Build output 3MB, quota 50MB. Loads only linked runtime dependencies, uses `patchelf` and bootstraps with a `LD_LIBRARY_PATH` overwrite.
   ```
   $ nix-build -A zip -o lambda.zip
   # push file "./lambda.zip" to AWS Lambda with the method of your choice
   ```
 
-- Using a container (see late 2020 [feature announcement](https://aws.amazon.com/blogs/aws/new-for-aws-lambda-container-image-support/)). Build output 43MB, quota 10GB.
+- Using a container (see late 2020 [feature announcement](https://aws.amazon.com/blogs/aws/new-for-aws-lambda-container-image-support/)). Build output 43MB, quota 10GB. Bundles all the dependencies.
   ```
   $ docker load <$(nix-build -A container)
   # push image "lambda:nix" to AWS ECR with Docker
@@ -22,7 +21,3 @@ implementation.
 
 The implementation for the patching in `lambda-zip` is adapted from Renzo Carbonara's
 [code](https://github.com/k0001/aws-lambda-nix-haskell).
-
-Note that functions `lambda-zip` and `lambda-container` from file `default.nix` are not specific to
-Haskell. They should work with any executable build output that is properly
-packaged.

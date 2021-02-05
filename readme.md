@@ -15,7 +15,7 @@ Here are two ways to ship Haskell to AWS Lambda. The first method bundles shared
   # trigger an AWS Lambda update with the method of your choice
   ```
 
-Both examples package `Main.hs`, which uses Oleg Grenrus'
+Both examples package the `toUpper` example function contained in `Main.hs`, which uses Oleg Grenrus'
 [AWS Runtime](https://github.com/phadej/aws-lambda-haskell-runtime)
 implementation.
 

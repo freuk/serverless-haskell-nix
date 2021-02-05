@@ -16,6 +16,5 @@ docker load <$(nix-build -A lambda-container)
 ```
 
 Pointers:
-
+- https://lazamar.github.io/deploying-statically-linked-haskell-to-lambda/
 - https://www.haskelltutorials.com/haskell-aws-lambda/compiling-haskell-runtime-in-docker.html
-- https://github.com/phadej/aws-lambda-haskell-runtime/blob/master/docker-image/Dockerfile

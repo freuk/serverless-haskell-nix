@@ -23,6 +23,6 @@ implementation.
 The implementation for the patching in `lambda-zip` is adapted from Renzo Carbonara's
 [code](https://github.com/k0001/aws-lambda-nix-haskell).
 
-Note that functions `lambda-zip` and `lambda-container` are not specific to
+Note that functions `lambda-zip` and `lambda-container` from file `default.nix` are not specific to
 Haskell. They should work with any executable build output that is properly
 packaged.

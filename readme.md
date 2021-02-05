@@ -23,4 +23,5 @@ The implementation for the patching in `lambda-zip` is adapted from Renzo Carbon
 [code](https://github.com/k0001/aws-lambda-nix-haskell).
 
 Note that functions `lambda-zip` and `lambda-container` are not specific to
-Haskell. They should work with any stack as long as it's packaged with Nix.
+Haskell. They should work with any executable build output that is properly
+packaged.

@@ -2,7 +2,7 @@
 
 Here are two ways to leverage Nix for AWS Lambda compatible reproducible haskell builds. The first method only adds shared libraries, which is appropriate due to the quota. The second methods bundles the whole set of Nix dependencies.  
 
-- Using a custom runtime. Build output 3MB, quota 50MB. Loads only linked runtime dependencies, uses `patchelf` and bootstraps with a `LD_LIBRARY_PATH` overwrite.
+- Using a custom runtime. Build output 3MB, quota 50MB. Bundles only shared libraries, uses `patchelf` and bootstraps with a `LD_LIBRARY_PATH` overwrite.
   ```
   $ nix-build -A zip -o lambda.zip
   # push file "./lambda.zip" to AWS Lambda with the method of your choice

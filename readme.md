@@ -25,9 +25,3 @@ The implementation for the dependency bundling is adapted from Renzo Carbonara's
 
 Note that functions `lambda-zip` and `lambda-container` are not specific to
 Haskell. They should work with any stack as long as it's packaged with Nix.
-
-Pointers:
-
-- https://github.com/k0001/aws-lambda-nix-haskell/blob/master/default.nix
-- https://www.haskelltutorials.com/haskell-aws-lambda/compiling-haskell-runtime-in-docker.html
-- https://github.com/phadej/aws-lambda-haskell-runtime/blob/master/docker-image/Dockerfile

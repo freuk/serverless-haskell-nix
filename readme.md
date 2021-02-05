@@ -1,6 +1,6 @@
 ## Serverless Haskell via Nix
 
-Here are two ways to ship haskell to AWS Lambda. The first method only adds shared libraries, which is appropriate due to the quota. The second methods bundles the whole set of Nix dependencies. Note that the second method is more robust and should work with any properly packaged application.  
+Here are two ways to ship haskell to AWS Lambda. The first method only adds shared libraries, which is appropriate due to the quota on lambda function zip packages. The second methods leverages the larger size quota for containers to bundle the whole set of Nix dependencies, which is more robust.
 
 - Using a custom runtime. Build output 3MB, quota 50MB. Bundles only shared libraries, uses `patchelf` and bootstraps with a `LD_LIBRARY_PATH` overwrite.
   ```

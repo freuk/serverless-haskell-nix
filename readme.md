@@ -2,7 +2,7 @@
 
 Here are two ways to ship Haskell to AWS Lambda with custom runtimes. The first method bundles shared libraries only, which is appropriate due to the quota from AWS on lambda function size. The second, more robust method leverages the larger quota on container size to bundle the whole set of Nix dependencies.
 
-- Using a zip file. Build output 3MB, quota 50MB. Bundles only shared libraries, uses `patchelf` and bootstraps with a `LD_LIBRARY_PATH` overwrite.
+- Using a zip file. Build output 3MB, quota 50MB. Bundles only shared libraries, uses `patchelf` and bootstraps with a `LD_LIBRARY_PATH` overwrite. This will fail on most useful dependencies, but might be sufficient for minimal code.
   ```
   $ nix-build -A zip -o lambda.zip
   # push file "./lambda.zip" to AWS Lambda with the method of your choice
